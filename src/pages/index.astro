@@ -281,13 +281,17 @@ const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.gal
     .gallery-ig .btn-ig:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(225,48,108,0.35);color:#fff;}
     .gallery-ig .btn-ig svg{width:20px;height:20px;fill:currentColor;flex-shrink:0;}
 
-    /* FAQ */
-    .faq{padding:90px 0;background:var(--cream);}
+    /* FAQ Accordion */
+    .faq{padding:90px 0;background:var(--cream-alt);}
     .faq-list{max-width:740px;margin:0 auto;}
-    .faq-item{border-bottom:1px solid var(--gold-border);padding:22px 0;}
+    .faq-item{border-bottom:1px solid var(--gold-border);}
     .faq-item:last-child{border-bottom:none;}
-    .faq-q{font-family:var(--font-serif);font-size:1.15rem;font-weight:700;color:var(--burg);margin-bottom:8px;}
-    .faq-a{font-size:0.92rem;color:var(--muted);line-height:1.7;}
+    .faq-q{font-family:var(--font-serif);font-size:1.15rem;font-weight:700;color:var(--burg);cursor:pointer;padding:22px 36px 22px 0;position:relative;list-style:none;display:block;}
+    .faq-q::-webkit-details-marker{display:none;}
+    .faq-q::after{content:'';position:absolute;right:4px;top:50%;width:10px;height:10px;border-right:2px solid var(--gold);border-bottom:2px solid var(--gold);transform:translateY(-60%) rotate(45deg);transition:transform 0.3s ease;}
+    .faq-item[open] .faq-q::after{transform:translateY(-30%) rotate(-135deg);}
+    .faq-q:hover{color:var(--gold);}
+    .faq-a{font-size:0.92rem;color:var(--muted);line-height:1.7;padding:0 0 22px;}
 
     /* CONTACT */
     .contact{padding:110px 0;background:var(--burg);}
@@ -640,37 +644,6 @@ const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.gal
   </div>
 </section>
 
-<!-- FAQ -->
-<section class="faq" id="faq">
-  <div class="container">
-    <p class="eyebrow reveal" style="text-align:center">Häufige Fragen</p>
-    <h2 class="sec-title reveal" style="text-align:center">Gut zu <em>wissen</em></h2>
-    <div class="gold-line center reveal"></div>
-    <div class="faq-list">
-      <div class="faq-item reveal">
-        <p class="faq-q">Wo ist das Restaurant Del Sud in Frankenberg?</p>
-        <p class="faq-a">Del Sud befindet sich in der Ritterstraße 3, 35066 Frankenberg (Eder), mitten in der Innenstadt — gut erreichbar und mit Parkmöglichkeiten in der Nähe.</p>
-      </div>
-      <div class="faq-item reveal">
-        <p class="faq-q">Wann hat Del Sud geöffnet?</p>
-        <p class="faq-a">Montag bis Dienstag und Donnerstag bis Sonntag: 11:30–14:30 Uhr und 17:30–22:00 Uhr. Mittwoch ist unser Ruhetag.</p>
-      </div>
-      <div class="faq-item reveal">
-        <p class="faq-q">Was kostet eine Pizza bei Del Sud?</p>
-        <p class="faq-a">Unsere Pizzen starten ab ca. 8 € für eine klassische Margherita. Alle Preise finden Sie in unserer <a href="/speisekarte/" style="color:var(--gold);text-decoration:underline;">Speisekarte als PDF</a>.</p>
-      </div>
-      <div class="faq-item reveal">
-        <p class="faq-q">Kann man bei Del Sud reservieren?</p>
-        <p class="faq-a">Ja, telefonisch unter <a href="tel:01703678734" style="color:var(--gold);">0170 3678734</a> oder per E-Mail. Auch spontane Besuche ohne Reservierung sind jederzeit willkommen.</p>
-      </div>
-      <div class="faq-item reveal">
-        <p class="faq-q">Gibt es vegetarische Gerichte?</p>
-        <p class="faq-a">Ja, unsere Speisekarte bietet zahlreiche vegetarische Optionen — von Pizza Margherita über Pasta mit Gemüse bis zu frischen Salaten.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- KONTAKT -->
 <section class="contact" id="contact">
   <div class="container">
@@ -705,6 +678,37 @@ const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.gal
           E-Mail an Del Sud schreiben
         </a>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="container">
+    <p class="eyebrow reveal" style="text-align:center">Häufige Fragen</p>
+    <h2 class="sec-title reveal" style="text-align:center">Gut zu <em>wissen</em></h2>
+    <div class="gold-line center reveal"></div>
+    <div class="faq-list">
+      <details class="faq-item reveal">
+        <summary class="faq-q">Wo ist das Restaurant Del Sud in Frankenberg?</summary>
+        <p class="faq-a">Del Sud befindet sich in der Ritterstraße 3, 35066 Frankenberg (Eder), mitten in der Innenstadt — gut erreichbar und mit Parkmöglichkeiten in der Nähe.</p>
+      </details>
+      <details class="faq-item reveal">
+        <summary class="faq-q">Wann hat Del Sud geöffnet?</summary>
+        <p class="faq-a">Montag bis Dienstag und Donnerstag bis Sonntag: 11:30–14:30 Uhr und 17:30–22:00 Uhr. Mittwoch ist unser Ruhetag.</p>
+      </details>
+      <details class="faq-item reveal">
+        <summary class="faq-q">Was kostet eine Pizza bei Del Sud?</summary>
+        <p class="faq-a">Unsere Pizzen starten ab ca. 8 € für eine klassische Margherita. Alle Preise finden Sie in unserer <a href="/speisekarte/" style="color:var(--gold);text-decoration:underline;">Speisekarte als PDF</a>.</p>
+      </details>
+      <details class="faq-item reveal">
+        <summary class="faq-q">Kann man bei Del Sud reservieren?</summary>
+        <p class="faq-a">Ja, telefonisch unter <a href="tel:01703678734" style="color:var(--gold);">0170 3678734</a> oder per E-Mail. Auch spontane Besuche ohne Reservierung sind jederzeit willkommen.</p>
+      </details>
+      <details class="faq-item reveal">
+        <summary class="faq-q">Gibt es vegetarische Gerichte?</summary>
+        <p class="faq-a">Ja, unsere Speisekarte bietet zahlreiche vegetarische Optionen — von Pizza Margherita über Pasta mit Gemüse bis zu frischen Salaten.</p>
+      </details>
     </div>
   </div>
 </section>
