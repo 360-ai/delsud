@@ -73,6 +73,12 @@ const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.gal
   <meta name="twitter:description" content="Authentische italienische Küche in Frankenberg (Eder). Reservieren Sie jetzt!" />
   <meta name="twitter:image" content="https://delsud-frankenberg.de/images/delsudladen.jpg" />
 
+  <!-- Geo Tags (Lokales SEO) -->
+  <meta name="geo.region" content="DE-HE" />
+  <meta name="geo.placename" content="Frankenberg (Eder)" />
+  <meta name="geo.position" content="51.0589;8.7950" />
+  <meta name="ICBM" content="51.0589, 8.7950" />
+
   <!-- Sicherheits-Header -->
   <meta http-equiv="X-Content-Type-Options" content="nosniff" />
   <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
@@ -275,6 +281,14 @@ const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.gal
     .gallery-ig .btn-ig:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(225,48,108,0.35);color:#fff;}
     .gallery-ig .btn-ig svg{width:20px;height:20px;fill:currentColor;flex-shrink:0;}
 
+    /* FAQ */
+    .faq{padding:90px 0;background:var(--cream);}
+    .faq-list{max-width:740px;margin:0 auto;}
+    .faq-item{border-bottom:1px solid var(--gold-border);padding:22px 0;}
+    .faq-item:last-child{border-bottom:none;}
+    .faq-q{font-family:var(--font-serif);font-size:1.15rem;font-weight:700;color:var(--burg);margin-bottom:8px;}
+    .faq-a{font-size:0.92rem;color:var(--muted);line-height:1.7;}
+
     /* CONTACT */
     .contact{padding:110px 0;background:var(--burg);}
     .contact .sec-title{color:#fff;}
@@ -364,6 +378,53 @@ const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.gal
     ],
     "hasMenu": "https://delsud-frankenberg.de/downloads/Del-Sud-Speisekarte.pdf",
     "sameAs": [cms.instagram_url]
+  })}></script>
+
+  <!-- Schema.org: WebSite -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Del Sud Frankenberg",
+    "url": "https://delsud-frankenberg.de",
+    "description": "Authentische italienische Küche in Frankenberg (Eder) – Pizza, Pasta, Weine & Bar.",
+    "publisher": {
+      "@type": "Restaurant",
+      "name": "Del Sud",
+      "url": "https://delsud-frankenberg.de"
+    }
+  })}></script>
+
+  <!-- Schema.org: FAQPage (GEO-Sichtbarkeit) -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Wo ist das Restaurant Del Sud in Frankenberg?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Del Sud befindet sich in der Ritterstraße 3, 35066 Frankenberg (Eder), mitten in der Innenstadt." }
+      },
+      {
+        "@type": "Question",
+        "name": "Wann hat Del Sud geöffnet?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Montag bis Dienstag und Donnerstag bis Sonntag: 11:30–14:30 Uhr und 17:30–22:00 Uhr. Mittwoch ist Ruhetag." }
+      },
+      {
+        "@type": "Question",
+        "name": "Was kostet eine Pizza bei Del Sud?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Unsere Pizzen starten ab ca. 8 € für eine Margherita. Die vollständige Speisekarte mit allen Preisen gibt es als PDF auf unserer Website." }
+      },
+      {
+        "@type": "Question",
+        "name": "Kann man bei Del Sud reservieren?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Ja, telefonisch unter 0170 3678734 oder per E-Mail. Auch spontane Besuche ohne Reservierung sind willkommen." }
+      },
+      {
+        "@type": "Question",
+        "name": "Gibt es bei Del Sud auch vegetarische Gerichte?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Ja, unsere Speisekarte bietet zahlreiche vegetarische Optionen — von Pizza Margherita über Pasta mit Gemüse bis zu frischen Salaten." }
+      }
+    ]
   })}></script>
 
   <!-- Google Analytics (GA4) — Measurement-ID eintragen und Kommentar entfernen -->
@@ -575,6 +636,37 @@ const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.gal
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.9.3 2.3.5.6.2 1 .5 1.5 1 .4.4.7.9.9 1.5.2.4.4 1.1.5 2.3.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.9-.5 2.3-.2.6-.5 1-1 1.5-.4.4-.9.7-1.5.9-.4.2-1.1.4-2.3.5-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.9-.3-2.3-.5-.6-.2-1-.5-1.5-1-.4-.4-.7-.9-.9-1.5-.2-.4-.4-1.1-.5-2.3-.1-1.3-.1-1.7-.1-4.9s0-3.6.1-4.9c.1-1.2.3-1.9.5-2.3.2-.6.5-1 1-1.5.4-.4.9-.7 1.5-.9.4-.2 1.1-.4 2.3-.5 1.3-.1 1.7-.1 4.9-.1zm0 1.8c-3.1 0-3.5 0-4.7.1-1 .1-1.6.2-2 .4-.5.2-.9.4-1.2.8-.4.3-.6.7-.8 1.2-.2.4-.4 1-.4 2-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c.1 1 .2 1.6.4 2 .2.5.4.9.8 1.2.3.4.7.6 1.2.8.4.2 1 .4 2 .4 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1-.1 1.6-.2 2-.4.5-.2.9-.4 1.2-.8.4-.3.6-.7.8-1.2.2-.4.4-1 .4-2 .1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1-.2-1.6-.4-2-.2-.5-.4-.9-.8-1.2-.3-.4-.7-.6-1.2-.8-.4-.2-1-.4-2-.4-1.2-.1-1.6-.1-4.7-.1z"/><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zm5.3-8.3a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0z"/></svg>
         @del_sud_italiano_
       </a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="container">
+    <p class="eyebrow reveal" style="text-align:center">Häufige Fragen</p>
+    <h2 class="sec-title reveal" style="text-align:center">Gut zu <em>wissen</em></h2>
+    <div class="gold-line center reveal"></div>
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <p class="faq-q">Wo ist das Restaurant Del Sud in Frankenberg?</p>
+        <p class="faq-a">Del Sud befindet sich in der Ritterstraße 3, 35066 Frankenberg (Eder), mitten in der Innenstadt — gut erreichbar und mit Parkmöglichkeiten in der Nähe.</p>
+      </div>
+      <div class="faq-item reveal">
+        <p class="faq-q">Wann hat Del Sud geöffnet?</p>
+        <p class="faq-a">Montag bis Dienstag und Donnerstag bis Sonntag: 11:30–14:30 Uhr und 17:30–22:00 Uhr. Mittwoch ist unser Ruhetag.</p>
+      </div>
+      <div class="faq-item reveal">
+        <p class="faq-q">Was kostet eine Pizza bei Del Sud?</p>
+        <p class="faq-a">Unsere Pizzen starten ab ca. 8 € für eine klassische Margherita. Alle Preise finden Sie in unserer <a href="/speisekarte/" style="color:var(--gold);text-decoration:underline;">Speisekarte als PDF</a>.</p>
+      </div>
+      <div class="faq-item reveal">
+        <p class="faq-q">Kann man bei Del Sud reservieren?</p>
+        <p class="faq-a">Ja, telefonisch unter <a href="tel:01703678734" style="color:var(--gold);">0170 3678734</a> oder per E-Mail. Auch spontane Besuche ohne Reservierung sind jederzeit willkommen.</p>
+      </div>
+      <div class="faq-item reveal">
+        <p class="faq-q">Gibt es vegetarische Gerichte?</p>
+        <p class="faq-a">Ja, unsere Speisekarte bietet zahlreiche vegetarische Optionen — von Pizza Margherita über Pasta mit Gemüse bis zu frischen Salaten.</p>
+      </div>
     </div>
   </div>
 </section>
