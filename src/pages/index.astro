@@ -19,14 +19,14 @@ let cms: any = {
 };
 
 const fallbackGalerie = [
-  { bild: { filename: '/images/site-embed-05.jpg' }, beschriftung: 'Pizza del Sud' },
-  { bild: { filename: '/images/site-embed-06.jpg' }, beschriftung: 'Pizza frisch aus dem Ofen' },
-  { bild: { filename: '/images/site-embed-07.jpg' }, beschriftung: 'Pizza Classica' },
-  { bild: { filename: '/images/site-embed-08.jpg' }, beschriftung: 'Unsere Pizzavielfalt' },
-  { bild: { filename: '/images/site-embed-09.jpg' }, beschriftung: 'Pizza con Amore' },
-  { bild: { filename: '/images/site-embed-10.jpg' }, beschriftung: 'Hausgemachte Pizza' },
-  { bild: { filename: '/images/site-embed-11.jpg' }, beschriftung: 'Pizza Speciale' },
-  { bild: { filename: '/images/site-embed-12.jpg' }, beschriftung: 'Del Sud Kreation' },
+  { bild: { filename: '/images/site-embed-05.webp' }, beschriftung: 'Pizza del Sud' },
+  { bild: { filename: '/images/site-embed-06.webp' }, beschriftung: 'Pizza frisch aus dem Ofen' },
+  { bild: { filename: '/images/site-embed-07.webp' }, beschriftung: 'Pizza Classica' },
+  { bild: { filename: '/images/site-embed-08.webp' }, beschriftung: 'Unsere Pizzavielfalt' },
+  { bild: { filename: '/images/site-embed-09.webp' }, beschriftung: 'Pizza con Amore' },
+  { bild: { filename: '/images/site-embed-10.webp' }, beschriftung: 'Hausgemachte Pizza' },
+  { bild: { filename: '/images/site-embed-11.webp' }, beschriftung: 'Pizza Speciale' },
+  { bild: { filename: '/images/site-embed-12.webp' }, beschriftung: 'Del Sud Kreation' },
 ];
 
 try {
@@ -54,8 +54,8 @@ const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.gal
   <meta name="author" content="Del Sud Bar Ristorante Pizzeria" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://delsud-frankenberg.de/" />
-  <link rel="icon" type="image/jpeg" href="/images/logodelsud.jfif" />
-  <link rel="apple-touch-icon" href="/images/logodelsud.jfif" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
   <!-- Open Graph / Social Media -->
   <meta property="og:title" content="Del Sud – Italienisches Restaurant & Pizzeria Frankenberg" />
@@ -64,14 +64,16 @@ const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.gal
   <meta property="og:url" content="https://delsud-frankenberg.de/" />
   <meta property="og:locale" content="de_DE" />
   <meta property="og:site_name" content="Del Sud Frankenberg" />
-  <meta property="og:image" content="https://delsud-frankenberg.de/images/delsudladen.jpg" />
+  <meta property="og:image" content="https://delsud-frankenberg.de/images/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="Del Sud – Restaurant in Frankenberg (Eder)" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Del Sud – Pizzeria & Ristorante Frankenberg" />
   <meta name="twitter:description" content="Authentische italienische Küche in Frankenberg (Eder). Reservieren Sie jetzt!" />
-  <meta name="twitter:image" content="https://delsud-frankenberg.de/images/delsudladen.jpg" />
+  <meta name="twitter:image" content="https://delsud-frankenberg.de/images/og-image.jpg" />
 
   <!-- Geo Tags (Lokales SEO) -->
   <meta name="geo.region" content="DE-HE" />
@@ -451,7 +453,7 @@ const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.gal
 <nav id="nav" aria-label="Hauptnavigation">
   <div class="container nav-inner">
     <a href="#" class="nav-logo">
-      <img src="/images/site-embed-01.jpg" alt="Del Sud" />
+      <img src="/images/site-embed-01.webp" alt="Del Sud" width="36" height="36" />
       <span class="nav-logo-text">DEL SUD</span>
     </a>
     <div class="nav-links">
@@ -489,7 +491,7 @@ const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.gal
   <div class="hero-content">
     <div class="hero-logo-wrap">
       <div class="hero-logo-ring">
-        <img src="/images/site-embed-02.jpg" alt="Del Sud Logo" />
+        <img src="/images/site-embed-02.webp" alt="Del Sud Logo" width="150" height="150" />
       </div>
     </div>
     <div class="hero-flag-bar"><span></span><span></span><span></span></div>
@@ -522,8 +524,8 @@ const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.gal
     <div class="about-grid">
       <div class="about-imgs reveal-l">
         <div class="about-tag">Ogni giorno fresco</div>
-        <img class="about-img-main" src="/images/site-embed-03.jpg" alt="Pizza del Sud" loading="lazy" decoding="async" />
-        <img class="about-img-float" src="/images/site-embed-04.jpg" alt="Pizza Margherita" loading="lazy" decoding="async" />
+        <img class="about-img-main" src="/images/site-embed-03.webp" alt="Pizza del Sud" width="539" height="543" loading="lazy" decoding="async" />
+        <img class="about-img-float" src="/images/site-embed-04.webp" alt="Pizza Margherita" width="387" height="465" loading="lazy" decoding="async" />
       </div>
       <div class="about-text reveal-r">
         <p class="eyebrow">Über uns</p>
@@ -629,7 +631,7 @@ const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.gal
         const cls = classes[i % classes.length];
         return (
           <div class={cls}>
-            <img src={item.bild?.filename} alt={item.beschriftung || 'Del Sud'} loading="lazy" decoding="async" />
+            <img src={item.bild?.filename} alt={item.beschriftung || 'Del Sud'} width="480" height="460" loading="lazy" decoding="async" />
           </div>
         );
       })}
@@ -720,7 +722,7 @@ const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.gal
   <div class="container">
     <div class="foot-inner">
       <div class="foot-logo">
-        <img src="/images/site-embed-13.jpg" alt="Del Sud" loading="lazy" decoding="async" />
+        <img src="/images/site-embed-13.webp" alt="Del Sud" width="150" height="150" loading="lazy" decoding="async" />
         <span>DEL SUD</span>
       </div>
       <div class="foot-links">
