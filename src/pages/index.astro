@@ -19,14 +19,21 @@ let cms: any = {
 };
 
 const fallbackGalerie = [
-  { bild: { filename: '/images/site-embed-05.webp' }, beschriftung: 'Pizza del Sud' },
-  { bild: { filename: '/images/site-embed-06.webp' }, beschriftung: 'Pizza frisch aus dem Ofen' },
-  { bild: { filename: '/images/site-embed-07.webp' }, beschriftung: 'Pizza Classica' },
-  { bild: { filename: '/images/site-embed-08.webp' }, beschriftung: 'Unsere Pizzavielfalt' },
-  { bild: { filename: '/images/site-embed-09.webp' }, beschriftung: 'Pizza con Amore' },
-  { bild: { filename: '/images/site-embed-10.webp' }, beschriftung: 'Hausgemachte Pizza' },
-  { bild: { filename: '/images/site-embed-11.webp' }, beschriftung: 'Pizza Speciale' },
-  { bild: { filename: '/images/site-embed-12.webp' }, beschriftung: 'Del Sud Kreation' },
+  { bild: { filename: '/images/galerie-01.webp' }, beschriftung: 'Pizza Margherita' },
+  { bild: { filename: '/images/galerie-02.webp' }, beschriftung: 'Pizza del Sud' },
+  { bild: { filename: '/images/galerie-03.webp' }, beschriftung: 'Pizza Salami' },
+  { bild: { filename: '/images/galerie-04.webp' }, beschriftung: 'Pasta Classica' },
+  { bild: { filename: '/images/galerie-05.webp' }, beschriftung: 'Pizza frisch aus dem Ofen' },
+  { bild: { filename: '/images/galerie-06.webp' }, beschriftung: 'Unsere Pizzavielfalt' },
+  { bild: { filename: '/images/galerie-07.webp' }, beschriftung: 'Pizza mit Burrata' },
+  { bild: { filename: '/images/galerie-08.webp' }, beschriftung: 'Hausgemachte Pizza' },
+  { bild: { filename: '/images/galerie-09.webp' }, beschriftung: 'Pizza Speciale' },
+  { bild: { filename: '/images/galerie-10.webp' }, beschriftung: 'Del Sud Kreation' },
+  { bild: { filename: '/images/galerie-11.webp' }, beschriftung: 'Pizza con Amore' },
+  { bild: { filename: '/images/galerie-12.webp' }, beschriftung: 'Del Sud Innenraum' },
+  { bild: { filename: '/images/galerie-13.webp' }, beschriftung: 'Antipasti' },
+  { bild: { filename: '/images/galerie-14.webp' }, beschriftung: 'Pizza con Rucola' },
+  { bild: { filename: '/images/galerie-15.webp' }, beschriftung: 'Insalata del Sud' },
 ];
 
 try {
@@ -233,8 +240,7 @@ const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.gal
     .offer-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,150,58,0.07),transparent);opacity:0;transition:var(--ease);}
     .offer-card:hover{background:rgba(255,255,255,0.07);}
     .offer-card:hover::before{opacity:1;}
-    .offer-icon-wrap{width:52px;height:52px;border-radius:50%;border:1px solid var(--gold-border);display:flex;align-items:center;justify-content:center;margin-bottom:22px;}
-    .offer-icon-wrap svg{width:22px;height:22px;stroke:var(--gold-lt);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;}
+    .offer-img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;margin-bottom:22px;}
     .offer-card h3{font-family:var(--font-serif);font-size:1.7rem;color:#fff;margin-bottom:14px;}
     .offer-card p{font-size:0.9rem;color:rgba(255,255,255,0.6);line-height:1.7;}
     .offer-num{position:absolute;top:24px;right:24px;font-family:var(--font-serif);font-size:4rem;font-weight:700;color:rgba(201,150,58,0.07);line-height:1;pointer-events:none;}
@@ -246,6 +252,25 @@ const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.gal
     .btn-speisekarte{display:inline-flex;align-items:center;gap:10px;padding:13px 28px;border:1.5px solid var(--gold);color:var(--gold-lt);font-size:0.88rem;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;border-radius:6px;transition:var(--ease);white-space:nowrap;}
     .btn-speisekarte:hover{background:var(--gold);color:var(--burg);}
     .btn-speisekarte svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;}
+
+    /* REVIEWS */
+    .reviews{padding:90px 0;background:var(--cream);}
+    .reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px;}
+    .review-card{background:#fff;border:1px solid var(--gold-border);border-radius:14px;padding:32px 28px;box-shadow:0 6px 24px rgba(61,16,16,0.05);transition:var(--ease);position:relative;}
+    .review-card:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(61,16,16,0.1);}
+    .review-stars{display:flex;gap:2px;margin-bottom:14px;}
+    .review-stars svg{width:16px;height:16px;fill:var(--gold);}
+    .review-text{font-size:0.92rem;color:var(--text);line-height:1.75;margin-bottom:18px;font-style:italic;}
+    .review-author{font-size:0.8rem;font-weight:700;letter-spacing:0.06em;color:var(--muted);text-transform:uppercase;}
+    .reviews-meta{text-align:center;margin-top:40px;}
+    .reviews-badge{display:inline-flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--gold-border);border-radius:50px;padding:14px 28px;box-shadow:0 4px 16px rgba(0,0,0,0.06);}
+    .reviews-badge-score{font-family:var(--font-serif);font-size:1.6rem;font-weight:700;color:var(--burg);}
+    .reviews-badge-stars{display:flex;gap:2px;}
+    .reviews-badge-stars svg{width:18px;height:18px;fill:var(--gold);}
+    .reviews-badge-text{font-size:0.78rem;color:var(--muted);line-height:1.4;}
+    .reviews-disclaimer{font-size:0.72rem;color:var(--muted);opacity:0.65;text-align:center;margin-top:20px;max-width:600px;margin-left:auto;margin-right:auto;line-height:1.6;}
+    @media(max-width:960px){.reviews-grid{grid-template-columns:1fr 1fr;}}
+    @media(max-width:680px){.reviews-grid{grid-template-columns:1fr;}}
 
     /* HOURS */
     .hours{padding:110px 0;background:var(--cream-alt);}
@@ -265,15 +290,8 @@ const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.gal
 
     /* GALLERY */
     .gallery{padding:110px 0;background:var(--cream);}
-    .gallery-mosaic{display:grid;grid-template-columns:repeat(12,1fr);grid-template-rows:260px 260px 260px 260px;gap:10px;margin-top:60px;border-radius:16px;overflow:hidden;}
-    .gal-a{grid-column:1/5;grid-row:1/3;}
-    .gal-b{grid-column:5/9;grid-row:1/2;}
-    .gal-c{grid-column:9/13;grid-row:1/2;}
-    .gal-d{grid-column:5/13;grid-row:2/3;}
-    .gal-e{grid-column:1/5;grid-row:3/4;}
-    .gal-f{grid-column:5/9;grid-row:3/4;}
-    .gal-g{grid-column:9/13;grid-row:3/5;}
-    .gal-h{grid-column:1/9;grid-row:4/5;}
+    .gallery-mosaic{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:280px;gap:10px;margin-top:60px;border-radius:16px;overflow:hidden;}
+    .gal-wide{grid-column:span 2;}
     .gallery-mosaic div{overflow:hidden;position:relative;}
     .gallery-mosaic div img{width:100%;height:100%;object-fit:cover;transition:transform 0.7s ease;}
     .gallery-mosaic div:hover img{transform:scale(1.05);}
@@ -340,7 +358,8 @@ const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.gal
       .offer-cards{grid-template-columns:1fr;}
       .speisekarte-bar{flex-direction:column;align-items:flex-start;}
       .gallery-mosaic{grid-template-columns:1fr 1fr;grid-template-rows:auto;}
-      .gal-a,.gal-b,.gal-c,.gal-d,.gal-e,.gal-f,.gal-g,.gal-h{grid-column:auto;grid-row:auto;height:240px;}
+      .gallery-mosaic{grid-template-columns:1fr 1fr;grid-auto-rows:220px;}
+      .gal-wide{grid-column:span 2;}
       .foot-inner{flex-direction:column;text-align:center;}
     }
     @media(max-width:680px){
@@ -353,7 +372,8 @@ const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.gal
       .hero-btns{flex-direction:column;align-items:center;}
       .about-imgs{display:none;}
       .gallery-mosaic{grid-template-columns:1fr;height:auto;}
-      .gal-a,.gal-b,.gal-c,.gal-d,.gal-e,.gal-f,.gal-g,.gal-h{height:220px;}
+      .gallery-mosaic{grid-template-columns:1fr;grid-auto-rows:220px;}
+      .gal-wide{grid-column:span 1;}
     }
     /* Skip-Link */
     .skip-link{position:absolute;top:-999px;left:-999px;z-index:10000;padding:10px 18px;background:var(--gold);color:var(--burg);font-weight:700;text-decoration:none;border-radius:4px;font-size:0.9rem;}
@@ -383,7 +403,13 @@ const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.gal
       { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Thursday","Friday","Saturday","Sunday"], "opens": "17:30", "closes": "22:00" }
     ],
     "hasMenu": "https://delsud-frankenberg.de/downloads/Del-Sud-Speisekarte.pdf",
-    "sameAs": [cms.instagram_url]
+    "sameAs": [cms.instagram_url],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.5",
+      "bestRating": "5",
+      "ratingCount": "155"
+    }
   })}></script>
 
   <!-- Schema.org: WebSite -->
@@ -461,6 +487,7 @@ const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.gal
       <a href="#offer">Angebot</a>
       <a href="#hours">Öffnungszeiten</a>
       <a href="#gallery">Galerie</a>
+      <a href="#reviews">Bewertungen</a>
       <a href="#contact">Kontakt</a>
       <a href="/speisekarte/" class="nav-cta">Speisekarte</a>
     </div>
@@ -472,6 +499,7 @@ const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.gal
   <a href="#offer" class="ml">Angebot</a>
   <a href="#hours" class="ml">Öffnungszeiten</a>
   <a href="#gallery" class="ml">Galerie</a>
+  <a href="#reviews" class="ml">Bewertungen</a>
   <a href="#contact" class="ml">Kontakt</a>
   <a href="/speisekarte/" class="ml">Speisekarte</a>
 </div>
@@ -524,8 +552,8 @@ const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.gal
     <div class="about-grid">
       <div class="about-imgs reveal-l">
         <div class="about-tag">Ogni giorno fresco</div>
-        <img class="about-img-main" src="/images/site-embed-03.webp" alt="Pizza del Sud" width="539" height="543" loading="lazy" decoding="async" />
-        <img class="about-img-float" src="/images/site-embed-04.webp" alt="Pizza Margherita" width="387" height="465" loading="lazy" decoding="async" />
+        <img class="about-img-main" src="/images/about-main.webp" alt="Del Sud Restaurant Frankenberg — Fachwerk-Fassade mit italienischen Farben" width="379" height="517" loading="lazy" decoding="async" />
+        <img class="about-img-float" src="/images/about-float.webp" alt="Das Team von Del Sud Frankenberg" width="540" height="360" loading="lazy" decoding="async" />
       </div>
       <div class="about-text reveal-r">
         <p class="eyebrow">Über uns</p>
@@ -553,19 +581,19 @@ const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.gal
     <div class="offer-cards">
       <div class="offer-card reveal">
         <span class="offer-num">01</span>
-        <div class="offer-icon-wrap"><svg viewBox="0 0 24 24"><path d="M12 2L2 20h20L12 2z"/><path d="M2 20Q12 23.5 22 20"/><circle cx="12" cy="10" r="1.4"/><circle cx="9" cy="15.5" r="1.1"/><circle cx="15" cy="15.5" r="1.1"/></svg></div>
+        <img class="offer-img" src="/images/offer-pizzeria.webp" alt="Handgemachte Pizza mit Burrata im Del Sud" width="400" height="225" loading="lazy" decoding="async" />
         <h3>Pizzeria</h3>
         <p>Handgezogener Teig, 48 Stunden gereift, mit besten Zutaten belegt — neapolitanische Tradition auf dem Teller.</p>
       </div>
       <div class="offer-card reveal">
         <span class="offer-num">02</span>
-        <div class="offer-icon-wrap"><svg viewBox="0 0 24 24"><line x1="8" y1="3" x2="8" y2="21"/><path d="M5 3v5a3 3 0 0 0 6 0V3"/><path d="M15 3c2.5 0 4 2 4 5l-4 2v11"/></svg></div>
+        <img class="offer-img" src="/images/offer-ristorante.webp" alt="Frische Pasta im Del Sud Ristorante" width="400" height="225" loading="lazy" decoding="async" />
         <h3>Ristorante</h3>
         <p>Klassische und saisonale Gerichte der italienischen Küche — von Pasta bis Fleischspezialitäten, täglich frisch zubereitet.</p>
       </div>
       <div class="offer-card reveal">
         <span class="offer-num">03</span>
-        <div class="offer-icon-wrap"><svg viewBox="0 0 24 24"><path d="M8 22h8"/><path d="M12 11v11"/><path d="M6.5 6.5A5 5 0 0 0 12 11a5 5 0 0 0 5.5-4.5"/><path d="M5 3h14l-1.5 3.5H6.5L5 3z"/></svg></div>
+        <img class="offer-img" src="/images/offer-bar.webp" alt="Italienischer Wein an der Bar im Del Sud" width="400" height="225" loading="lazy" decoding="async" />
         <h3>Bar</h3>
         <p>Caffè, Aperitivo, Weine und Cocktails — echte Barkultur in entspannter Atmosphäre, zu jeder Tageszeit.</p>
       </div>
@@ -627,8 +655,8 @@ const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.gal
     <div class="gold-line center reveal"></div>
     <div class="gallery-mosaic">
       {galerie.map((item: any, i: number) => {
-        const classes = ['gal-a','gal-b','gal-c','gal-d','gal-e','gal-f','gal-g','gal-h'];
-        const cls = classes[i % classes.length];
+        const wideIndices = [2, 5, 8, 11];
+        const cls = wideIndices.includes(i) ? 'gal-wide' : '';
         return (
           <div class={cls}>
             <img src={item.bild?.filename} alt={item.beschriftung || 'Del Sud'} width="480" height="460" loading="lazy" decoding="async" />
@@ -643,6 +671,58 @@ const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.gal
         @del_sud_italiano_
       </a>
     </div>
+  </div>
+</section>
+
+<!-- KUNDENSTIMMEN -->
+<section class="reviews" id="reviews">
+  <div class="container">
+    <p class="eyebrow reveal" style="text-align:center">Kundenstimmen</p>
+    <h2 class="sec-title reveal" style="text-align:center">Was unsere <em>Gäste sagen</em></h2>
+    <div class="gold-line center reveal"></div>
+    <p class="reveal" style="text-align:center;color:var(--muted);max-width:480px;margin:0 auto;">Stimmen, die uns Freude machen.</p>
+    <div class="reviews-grid">
+      <div class="review-card reveal">
+        <div class="review-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg></div>
+        <p class="review-text">Ein echtes Juwel in Frankenberg! Die Pizza ist unglaublich — dünner, knuspriger Boden, perfekt belegt und mit authentischem Geschmack. Hier wird mit Liebe zum Detail gearbeitet, und das schmeckt man.</p>
+        <span class="review-author">Simon</span>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg></div>
+        <p class="review-text">Einfach nur wunderbar! Schon vor dem Essen gab es kleine Kostproben — einfach toll und mit so viel Liebe gemacht. Das Personal ist superherzlich, man fühlt sich richtig familiär und willkommen.</p>
+        <span class="review-author">Heike R.</span>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg></div>
+        <p class="review-text">Ein sehr schönes Restaurant. Freundliche und sehr aufmerksames Personal. Die Pizza war sehr schmackhaft. Zum Abschluss bekamen wir noch ein Limoncello aufs Haus. Das Lokal ist ein Gewinn für die Stadt Frankenberg.</p>
+        <span class="review-author">Holger H.</span>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg></div>
+        <p class="review-text">Die Pizza hier ist sensationell, man merkt sofort das hochwertige Zutaten verwendet werden. Die beste Pizza die es in Frankenberg und Umgebung gibt. Wir kommen definitiv wieder.</p>
+        <span class="review-author">Stephan N.</span>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg></div>
+        <p class="review-text">Wir waren begeistert. Pizza JeanLuca und Meeresfrüchte ein Traum von Qualität und wunderbarer Geschmack. Wir freuen uns schon auf das nächste Mal. Danke an Davide und sein Team.</p>
+        <span class="review-author">Regina</span>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg></div>
+        <p class="review-text">Das Ambiente ist sehr schön, alles ist sauber und aufgeräumt und die Mitarbeiterinnen sind sehr freundlich und hilfsbereit. Man kann mit Karte zahlen und es ist besser aufgrund großer Nachfrage einen Tisch zu reservieren.</p>
+        <span class="review-author">Jürgen C.</span>
+      </div>
+    </div>
+    <div class="reviews-meta reveal">
+      <div class="reviews-badge">
+        <span class="reviews-badge-score">4,5</span>
+        <div>
+          <div class="reviews-badge-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.86L12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg></div>
+          <span class="reviews-badge-text">basierend auf 155+ Bewertungen</span>
+        </div>
+      </div>
+    </div>
+    <p class="reviews-disclaimer">Auszüge echter Gästebewertungen. Aus Datenschutzgründen werden die Bewertungen statisch auf unserer Seite angezeigt — es findet keine Verbindung zu externen Bewertungsplattformen statt.</p>
   </div>
 </section>
 
