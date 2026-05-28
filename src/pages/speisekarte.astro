@@ -133,6 +133,10 @@ const pdfUrl = cms.speisekarte_pdf?.filename || '/downloads/Del-Sud-Speisekarte.
     .foot-links a{font-size:0.75rem;color:rgba(255,255,255,0.38);text-decoration:none;}
     .foot-links a:hover{color:var(--gold-lt);}
 
+    @media(max-width:768px){
+      .actions{display:none;}
+      .lead{margin-bottom:16px;}
+    }
     @media(max-width:680px){
       .topbar-inner{padding:0 20px;}
       .topbar-nav{display:none;}
@@ -183,6 +187,7 @@ const pdfUrl = cms.speisekarte_pdf?.filename || '/downloads/Del-Sud-Speisekarte.
 
     <div class="actions">
       <a class="btn btn-gold" href={pdfUrl} target="_blank" rel="noopener">PDF im neuen Tab</a>
+      <a class="btn btn-ghost" href={pdfUrl} download="Del-Sud-Speisekarte.pdf">Herunterladen</a>
     </div>
 
     <section class="pdf-box" aria-label="Speisekarte PDF">
@@ -190,7 +195,10 @@ const pdfUrl = cms.speisekarte_pdf?.filename || '/downloads/Del-Sud-Speisekarte.
         <iframe id="pdf-iframe" src={pdfUrl} title="Speisekarte Del Sud" style="width:100%;height:80vh;min-height:600px;border:none;"></iframe>
         <div class="pdf-mobile-fallback" id="pdf-mobile-fallback">
           <p>Die Speisekarte lässt sich auf diesem Gerät nicht direkt anzeigen.</p>
-          <a class="btn btn-gold" href={pdfUrl} target="_blank" rel="noopener">Speisekarte öffnen</a>
+          <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center;">
+            <a class="btn btn-gold" href={pdfUrl} target="_blank" rel="noopener">Speisekarte öffnen</a>
+            <a class="btn btn-ghost" href={pdfUrl} download="Del-Sud-Speisekarte.pdf">Herunterladen</a>
+          </div>
         </div>
       </div>
     </section>
