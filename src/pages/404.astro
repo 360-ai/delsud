@@ -15,7 +15,8 @@
     :root{--burg:#3D1010;--gold:#C9963A;--gold-lt:#E8BF7A;--cream:#FAF6EE;--text:#1A0F0A;--muted:#6B5040;}
     *{box-sizing:border-box;margin:0;padding:0;}
     body{font-family:'Mulish','Trebuchet MS',sans-serif;background:var(--cream);color:var(--text);min-height:100vh;display:flex;flex-direction:column;}
-    .topbar{background:var(--burg);color:#fff;padding:16px 24px;display:flex;align-items:center;gap:10px;}
+    .topbar{background:var(--burg);color:#fff;padding:16px 0;}
+    .topbar-inner{max-width:1140px;margin:0 auto;padding:0 36px;display:flex;align-items:center;gap:10px;}
     .topbar a{display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff;}
     .topbar img{width:36px;height:36px;border-radius:50%;object-fit:cover;border:1.5px solid var(--gold);}
     .topbar span{font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;font-size:1.2rem;letter-spacing:0.08em;}
@@ -35,10 +36,12 @@
 </head>
 <body>
   <header class="topbar">
+    <div class="topbar-inner">
     <a href="/">
       <img src="/images/site-embed-01.webp" alt="" width="36" height="36" />
       <span>DEL SUD</span>
     </a>
+    </div>
   </header>
   <main class="content">
     <div class="code">404</div>
