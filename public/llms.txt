@@ -12,10 +12,11 @@ Del Sud ist ein authentisches italienisches Restaurant in Frankenberg (Eder), He
 - Pizzeria: Neapolitanische Pizza mit 48h Teigreife, frische Zutaten
 - Ristorante: Klassische und saisonale italienische Gerichte, Pasta, Fleisch, Fisch
 - Bar: Caffe, Aperitivo, italienische Weine, Cocktails
+- Live Musik: Veranstaltungen und Konzerte, Ankuendigungen ueber Instagram
 
 ## Oeffnungszeiten
-- Montag: 11:30-14:30, 17:30-22:00
-- Dienstag: 11:30-14:30, 17:30-22:00
+- Montag: 17:30-22:00
+- Dienstag: 17:30-22:00
 - Mittwoch: Ruhetag
 - Donnerstag: 11:30-14:30, 17:30-22:00
 - Freitag: 11:30-14:30, 17:30-22:00
