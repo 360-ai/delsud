@@ -428,7 +428,7 @@ const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.gal
     "servesCuisine": "Italian",
     "priceRange": "€€",
     "openingHoursSpecification": [
-      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Thursday","Friday","Saturday","Sunday"], "opens": "11:30", "closes": "14:30" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Thursday","Friday","Saturday","Sunday"], "opens": "11:30", "closes": "14:30" },
       { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Thursday","Friday","Saturday","Sunday"], "opens": "17:30", "closes": "22:00" }
     ],
     "hasMenu": "https://delsud-frankenberg.de/downloads/Del-Sud-Speisekarte.pdf",
@@ -468,7 +468,7 @@ const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.gal
       {
         "@type": "Question",
         "name": "Wann hat Del Sud geöffnet?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Montag bis Dienstag und Donnerstag bis Sonntag: 11:30–14:30 Uhr und 17:30–22:00 Uhr. Mittwoch ist Ruhetag." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Montag und Dienstag: 17:30–22:00 Uhr. Donnerstag bis Sonntag: 11:30–14:30 Uhr und 17:30–22:00 Uhr. Mittwoch ist Ruhetag." }
       },
       {
         "@type": "Question",
@@ -671,7 +671,7 @@ const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.gal
           <div class="dot" id="dot"></div>
           <span class="status-text" id="stext">Prüfe Status…</span>
         </div>
-        <p style="color:var(--muted);font-size:0.95rem;line-height:1.8;margin-bottom:28px;">Von Donnerstag bis Dienstag öffnen wir mittags und abends für Sie. Mittwochs ist unser Ruhetag.</p>
+        <p style="color:var(--muted);font-size:0.95rem;line-height:1.8;margin-bottom:28px;">Montag und Dienstag nur abends, Donnerstag bis Sonntag mittags und abends. Mittwochs ist unser Ruhetag.</p>
         <a href={`tel:${cms.phone_link}`} class="btn btn-hours-reserve" style="display:inline-flex;align-items:center;gap:10px;">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.9 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.81 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           Tisch reservieren
@@ -679,8 +679,8 @@ const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.gal
       </div>
       <div class="reveal-r">
         <div class="hours-table">
-          <div class="h-row"><span class="h-day">Montag</span><span class="h-time">11:30–14:30 · 17:30–22:00</span></div>
-          <div class="h-row"><span class="h-day">Dienstag</span><span class="h-time">11:30–14:30 · 17:30–22:00</span></div>
+          <div class="h-row"><span class="h-day">Montag</span><span class="h-time">17:30–22:00</span></div>
+          <div class="h-row"><span class="h-day">Dienstag</span><span class="h-time">17:30–22:00</span></div>
           <div class="h-row ruhetag"><span class="h-day" style="color:#bbb">Mittwoch</span><span class="h-time off">Ruhetag — geschlossen</span></div>
           <div class="h-row"><span class="h-day">Donnerstag</span><span class="h-time">11:30–14:30 · 17:30–22:00</span></div>
           <div class="h-row"><span class="h-day">Freitag</span><span class="h-time">11:30–14:30 · 17:30–22:00</span></div>
@@ -795,7 +795,7 @@ const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.gal
         </div>
         <div class="c-info-block">
           <div class="c-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-          <div><div class="c-label">Öffnungszeiten</div><div class="c-value">Do – Di: 11:30–14:30 &amp; 17:30–22:00<br/><span style="opacity:.5">Mittwoch: Ruhetag</span></div></div>
+          <div><div class="c-label">Öffnungszeiten</div><div class="c-value">Mo – Di: 17:30–22:00<br/>Do – So: 11:30–14:30 &amp; 17:30–22:00<br/><span style="opacity:.5">Mittwoch: Ruhetag</span></div></div>
         </div>
         <div class="map-ph">
           <svg viewBox="0 0 24 24"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
@@ -828,7 +828,7 @@ const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.gal
       </details>
       <details class="faq-item reveal">
         <summary class="faq-q">Wann hat Del Sud geöffnet?</summary>
-        <p class="faq-a">Montag bis Dienstag und Donnerstag bis Sonntag: 11:30–14:30 Uhr und 17:30–22:00 Uhr. Mittwoch ist unser Ruhetag.</p>
+        <p class="faq-a">Montag und Dienstag: 17:30–22:00 Uhr. Donnerstag bis Sonntag: 11:30–14:30 Uhr und 17:30–22:00 Uhr. Mittwoch ist unser Ruhetag.</p>
       </details>
       <details class="faq-item reveal">
         <summary class="faq-q">Was kostet eine Pizza bei Del Sud?</summary>
@@ -875,7 +875,7 @@ const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.gal
 </button>
 
 <script>
-  const H={0:[{s:'11:30',e:'14:30'},{s:'17:30',e:'22:00'}],1:[{s:'11:30',e:'14:30'},{s:'17:30',e:'22:00'}],2:[{s:'11:30',e:'14:30'},{s:'17:30',e:'22:00'}],3:[],4:[{s:'11:30',e:'14:30'},{s:'17:30',e:'22:00'}],5:[{s:'11:30',e:'14:30'},{s:'17:30',e:'22:00'}],6:[{s:'11:30',e:'14:30'},{s:'17:30',e:'22:00'}]};
+  const H={0:[{s:'17:30',e:'22:00'}],1:[{s:'17:30',e:'22:00'}],2:[{s:'11:30',e:'14:30'},{s:'17:30',e:'22:00'}],3:[],4:[{s:'11:30',e:'14:30'},{s:'17:30',e:'22:00'}],5:[{s:'11:30',e:'14:30'},{s:'17:30',e:'22:00'}],6:[{s:'11:30',e:'14:30'},{s:'17:30',e:'22:00'}]};
   const now=new Date(),day=now.getDay(),hm=now.getHours()*60+now.getMinutes(),slots=H[day]||[];
   const open=slots.some(sl=>{const[sh,sm]=sl.s.split(':').map(Number),[eh,em]=sl.e.split(':').map(Number);return hm>=sh*60+sm&&hm<=eh*60+em;});
   const dot=document.getElementById('dot'),st=document.getElementById('stext');
