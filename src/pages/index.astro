@@ -882,7 +882,8 @@ const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.gal
 </button>
 
 <script>
-  const H={0:[{s:'17:30',e:'22:00'}],1:[{s:'17:30',e:'22:00'}],2:[{s:'11:30',e:'14:30'},{s:'17:30',e:'22:00'}],3:[],4:[{s:'11:30',e:'14:30'},{s:'17:30',e:'22:00'}],5:[{s:'11:30',e:'14:30'},{s:'17:30',e:'22:00'}],6:[{s:'11:30',e:'14:30'},{s:'17:30',e:'22:00'}]};
+  // getDay(): 0=So … 6=Sa — So mittags+abends, Mo/Di nur abends, Mi Ruhetag, Do–Sa mittags+abends
+  const H={0:[{s:'11:30',e:'14:30'},{s:'17:30',e:'22:00'}],1:[{s:'17:30',e:'22:00'}],2:[{s:'17:30',e:'22:00'}],3:[],4:[{s:'11:30',e:'14:30'},{s:'17:30',e:'22:00'}],5:[{s:'11:30',e:'14:30'},{s:'17:30',e:'22:00'}],6:[{s:'11:30',e:'14:30'},{s:'17:30',e:'22:00'}]};
   const now=new Date(),day=now.getDay(),hm=now.getHours()*60+now.getMinutes(),slots=H[day]||[];
   const open=slots.some(sl=>{const[sh,sm]=sl.s.split(':').map(Number),[eh,em]=sl.e.split(':').map(Number);return hm>=sh*60+sm&&hm<=eh*60+em;});
   const dot=document.getElementById('dot'),st=document.getElementById('stext');
