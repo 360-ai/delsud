@@ -441,13 +441,7 @@ const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.gal
       { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Thursday","Friday","Saturday","Sunday"], "opens": "17:30", "closes": "22:00" }
     ],
     "hasMenu": "https://delsud-frankenberg.de/downloads/Del-Sud-Speisekarte.pdf",
-    "sameAs": [cms.instagram_url],
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.5",
-      "bestRating": "5",
-      "ratingCount": "155"
-    }
+    "sameAs": [cms.instagram_url]
   })}></script>
 
   <!-- Schema.org: WebSite -->
@@ -497,7 +491,11 @@ const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.gal
     ]
   })}></script>
 
-  <!-- Google Analytics (GA4) — Measurement-ID eintragen und Kommentar entfernen -->
+  <!-- Google Analytics (GA4) — ACHTUNG: Darf NUR zusammen mit einem Consent-Banner aktiviert
+       werden (Opt-in, § 25 TDDDG). Das Script muss technisch ERST NACH Einwilligung laden —
+       diesen Block also NICHT einfach einkommentieren, sondern hinter Consent-Management
+       (z.B. Klaro) haengen. Zusaetzlich: AVV mit Google abschliessen + GA4-Abschnitt in die
+       Datenschutzerklaerung. -->
   <!--
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>
@@ -782,7 +780,7 @@ const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.gal
         </div>
       </div>
     </div>
-    <p class="reviews-disclaimer">Auszüge echter Gästebewertungen. Aus Datenschutzgründen werden die Bewertungen statisch auf unserer Seite angezeigt — es findet keine Verbindung zu externen Bewertungsplattformen statt.</p>
+    <p class="reviews-disclaimer">Auszüge echter Gästebewertungen, unverändert übernommen aus unserem Google-Unternehmensprofil. Eine eigene Überprüfung, ob einzelne Bewertungen von Gästen mit tatsächlichem Besuch stammen, nehmen wir nicht vor. Aus Datenschutzgründen werden die Bewertungen statisch auf unserer Seite angezeigt — es findet keine Verbindung zu externen Bewertungsplattformen statt.</p>
   </div>
 </section>
 
