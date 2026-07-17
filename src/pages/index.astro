@@ -235,13 +235,12 @@ const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.gal
 
     /* ABOUT */
     .about{padding:110px 0;background:var(--cream);}
-    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:90px;align-items:center;}
-    .about-imgs{position:relative;padding-bottom:80px;}
-    .about-img-main{width:90%;height:auto;border-radius:16px;object-fit:cover;aspect-ratio:4/3;box-shadow:0 24px 70px rgba(0,0,0,0.14);}
-    .about-img-float{position:absolute;bottom:0;right:0;width:55%;height:auto;border-radius:12px;object-fit:cover;object-position:center;aspect-ratio:4/3;box-shadow:0 16px 48px rgba(0,0,0,0.18);border:5px solid var(--cream);}
-    .about-tag{position:absolute;top:24px;right:-12px;background:var(--gold);color:#fff;font-size:0.68rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;padding:8px 16px;border-radius:4px;box-shadow:0 4px 16px rgba(201,150,58,0.4);}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:90px;align-items:start;}
+    .about-imgs{position:relative;margin-top:45px;}
+    .about-img-main{width:100%;height:auto;border-radius:16px;object-fit:cover;aspect-ratio:4/3;box-shadow:0 24px 70px rgba(0,0,0,0.14);display:block;}
+    .about-tag{position:absolute;bottom:24px;left:24px;background:var(--gold);color:#fff;font-size:0.68rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;padding:8px 16px;border-radius:4px;box-shadow:0 4px 16px rgba(201,150,58,0.4);}
     .about-text p{font-size:1rem;color:var(--muted);line-height:1.8;margin-bottom:16px;}
-    .about-facts{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:32px;}
+    .about-facts{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:56px;}
     .fact{background:var(--cream-alt);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:18px 18px;}
     .fact strong{display:block;font-family:var(--font-serif);font-size:1.6rem;color:var(--burg);line-height:1;margin-bottom:4px;}
     .fact span{font-size:0.72rem;color:var(--muted);letter-spacing:0.09em;text-transform:uppercase;}
@@ -284,10 +283,11 @@ const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.gal
     .feature{padding:110px 0;}
     .feature.cream{background:var(--cream);}
     .feature.dark{background:var(--burg);}
-    .feature-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
-    .feature-media{position:relative;}
+    .feature-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+    .feature-media{position:relative;margin-top:45px;}
     .feature-media img{width:100%;height:auto;border-radius:16px;object-fit:cover;aspect-ratio:4/3;box-shadow:0 24px 70px rgba(0,0,0,0.16);}
     .feature-badge{position:absolute;top:18px;left:18px;background:var(--gold);color:#fff;font-size:0.68rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:8px 16px;border-radius:4px;box-shadow:0 4px 16px rgba(201,150,58,0.4);}
+    .feature.dark .feature-badge{left:auto;right:18px;}
     .feature.dark .sec-title{color:#fff;}
     .feature.dark .eyebrow{color:var(--gold-lt);}
     .feature.dark .gold-line{background:var(--gold-lt);}
@@ -416,6 +416,7 @@ const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.gal
     }
     @media(max-width:960px){
       .about-grid,.hours-inner,.contact-wrap{grid-template-columns:1fr;gap:48px;}
+      .about-imgs,.feature-media{margin-top:0;}
       .offer-cards{grid-template-columns:1fr 1fr;}
       .speisekarte-bar{flex-direction:column;align-items:flex-start;}
       .gallery-mosaic{grid-template-columns:repeat(3,1fr);grid-auto-rows:140px;}
@@ -429,9 +430,8 @@ const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.gal
       .hero-logo-ring{width:130px;height:130px;}
       .hero-title{font-size:3rem;}
       .hero-btns{flex-direction:column;align-items:center;}
-      .about-imgs{padding-bottom:64px;}
       .about-img-main{width:100%;}
-      .about-img-float{width:58%;}
+      .about-facts{grid-template-columns:repeat(2,1fr);margin-top:40px;}
       .gallery-mosaic{grid-template-columns:repeat(2,1fr);grid-auto-rows:130px;}
       .offer-cards{grid-template-columns:1fr;}
       .offer-img{aspect-ratio:2/1;}
@@ -621,8 +621,7 @@ const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.gal
     <div class="about-grid">
       <div class="about-imgs reveal-l">
         <div class="about-tag">Ogni giorno fresco</div>
-        <img class="about-img-main" src="/images/about-exterior-2026.webp" alt="Del Sud Restaurant in Frankenberg — Fachwerk-Fassade mit italienischen Farben" width="1800" height="1350" loading="lazy" decoding="async" />
-        <img class="about-img-float" src="/images/about-interior-2026.webp" alt="Blick in die offene Küche des Del Sud in Frankenberg" width="1800" height="1350" loading="lazy" decoding="async" />
+        <img class="about-img-main" src="/images/about-exterior-2026.webp" alt="Del Sud Restaurant in Frankenberg — Fachwerk-Fassade mit italienischen Farben" width="1600" height="1200" loading="lazy" decoding="async" />
       </div>
       <div class="about-text reveal-r">
         <p class="eyebrow">Über uns</p>
@@ -630,13 +629,13 @@ const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.gal
         <div class="gold-line"></div>
         <p>{cms.about_text_1}</p>
         <p>{cms.about_text_2}</p>
-        <div class="about-facts">
-          <div class="fact"><strong>48 h</strong><span>Teigreife für die Pizza</span></div>
-          <div class="fact"><strong>100 %</strong><span>Frische Zutaten täglich</span></div>
-          <div class="fact"><strong>Cantina</strong><span>Ausgewählte Weine &amp; Aperitivo</span></div>
-          <div class="fact"><strong>In Frankenberg</strong><span>Mitten in der Stadt</span></div>
-        </div>
       </div>
+    </div>
+    <div class="about-facts reveal">
+      <div class="fact"><strong>48 h</strong><span>Teigreife für die Pizza</span></div>
+      <div class="fact"><strong>100 %</strong><span>Frische Zutaten täglich</span></div>
+      <div class="fact"><strong>Cantina</strong><span>Ausgewählte Weine &amp; Aperitivo</span></div>
+      <div class="fact"><strong>In Frankenberg</strong><span>Mitten in der Stadt</span></div>
     </div>
   </div>
 </section>
