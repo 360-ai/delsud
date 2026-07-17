@@ -19,26 +19,26 @@ let cms: any = {
 };
 
 const fallbackGalerie = [
-  { bild: { filename: '/images/galerie-01.webp' }, beschriftung: 'Pizza Margherita' },
-  { bild: { filename: '/images/galerie-07.webp' }, beschriftung: 'Pizza mit Burrata' },
-  { bild: { filename: '/images/galerie-16.webp' }, beschriftung: 'Del Sud Außenansicht' },
-  { bild: { filename: '/images/galerie-02.webp' }, beschriftung: 'Pizza del Sud' },
-  { bild: { filename: '/images/galerie-03.webp' }, beschriftung: 'Pizza Salami' },
-  { bild: { filename: '/images/galerie-18.webp' }, beschriftung: 'Del Sud Innenbereich' },
-  { bild: { filename: '/images/galerie-04.webp' }, beschriftung: 'Pasta Classica' },
-  { bild: { filename: '/images/galerie-09.webp' }, beschriftung: 'Pizza Speciale' },
-  { bild: { filename: '/images/galerie-17.webp' }, beschriftung: 'Del Sud von außen' },
-  { bild: { filename: '/images/galerie-12.webp' }, beschriftung: 'Del Sud Innenraum' },
-  { bild: { filename: '/images/galerie-05.webp' }, beschriftung: 'Pizza frisch aus dem Ofen' },
-  { bild: { filename: '/images/galerie-20.webp' }, beschriftung: 'Dessert' },
-  { bild: { filename: '/images/galerie-06.webp' }, beschriftung: 'Unsere Pizzavielfalt' },
-  { bild: { filename: '/images/galerie-10.webp' }, beschriftung: 'Del Sud Kreation' },
-  { bild: { filename: '/images/galerie-19.webp' }, beschriftung: 'Gemütliches Ambiente' },
-  { bild: { filename: '/images/galerie-14.webp' }, beschriftung: 'Pizza con Rucola' },
-  { bild: { filename: '/images/galerie-08.webp' }, beschriftung: 'Hausgemachte Pizza' },
-  { bild: { filename: '/images/galerie-15.webp' }, beschriftung: 'Insalata del Sud' },
-  { bild: { filename: '/images/galerie-11.webp' }, beschriftung: 'Pizza con Amore' },
-  { bild: { filename: '/images/galerie-13.webp' }, beschriftung: 'Antipasti' },
+  { bild: { filename: '/images/galerie-01.webp' }, beschriftung: 'Pizza mit Prosciutto & Burrata' },
+  { bild: { filename: '/images/galerie-02.webp' }, beschriftung: 'Antipasti-Auswahl' },
+  { bild: { filename: '/images/galerie-03.webp' }, beschriftung: 'Unsere Vinothek' },
+  { bild: { filename: '/images/galerie-04.webp' }, beschriftung: 'Hausgemachtes Dessert' },
+  { bild: { filename: '/images/galerie-05.webp' }, beschriftung: 'Frischer gemischter Salat' },
+  { bild: { filename: '/images/galerie-06.webp' }, beschriftung: 'Tagliatelle in Tomatensugo' },
+  { bild: { filename: '/images/galerie-07.webp' }, beschriftung: 'Pizza frisch aus dem Ofen' },
+  { bild: { filename: '/images/galerie-08.webp' }, beschriftung: 'Frutti di Mare' },
+  { bild: { filename: '/images/galerie-09.webp' }, beschriftung: 'Blick in unsere Küche' },
+  { bild: { filename: '/images/galerie-10.webp' }, beschriftung: 'Tiramisu della Casa' },
+  { bild: { filename: '/images/galerie-11.webp' }, beschriftung: 'Pizza mit Rucola & Parmesan' },
+  { bild: { filename: '/images/galerie-12.webp' }, beschriftung: 'Antipasti-Brett' },
+  { bild: { filename: '/images/galerie-13.webp' }, beschriftung: 'Del Sud in der Ritterstraße' },
+  { bild: { filename: '/images/galerie-14.webp' }, beschriftung: 'Insalata mista' },
+  { bild: { filename: '/images/galerie-15.webp' }, beschriftung: 'Spaghetti Carbonara' },
+  { bild: { filename: '/images/galerie-16.webp' }, beschriftung: 'Vorspeisen-Variation' },
+  { bild: { filename: '/images/galerie-17.webp' }, beschriftung: 'Pizza Margherita' },
+  { bild: { filename: '/images/galerie-18.webp' }, beschriftung: 'Gemütliches Ambiente' },
+  { bild: { filename: '/images/galerie-19.webp' }, beschriftung: 'Pesce – Fisch nach Art des Hauses' },
+  { bild: { filename: '/images/galerie-20.webp' }, beschriftung: 'Pizza-Spezialität del Sud' },
 ];
 
 try {
@@ -236,9 +236,9 @@ const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.gal
     /* ABOUT */
     .about{padding:110px 0;background:var(--cream);}
     .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:90px;align-items:center;}
-    .about-imgs{position:relative;padding-bottom:60px;}
-    .about-img-main{width:85%;border-radius:16px;object-fit:cover;aspect-ratio:3/4;box-shadow:0 24px 70px rgba(0,0,0,0.14);}
-    .about-img-float{position:absolute;bottom:0;right:0;width:52%;border-radius:12px;object-fit:cover;object-position:70% 30%;aspect-ratio:1;box-shadow:0 16px 48px rgba(0,0,0,0.18);border:5px solid var(--cream);}
+    .about-imgs{position:relative;padding-bottom:80px;}
+    .about-img-main{width:90%;border-radius:16px;object-fit:cover;aspect-ratio:4/3;box-shadow:0 24px 70px rgba(0,0,0,0.14);}
+    .about-img-float{position:absolute;bottom:0;right:0;width:55%;border-radius:12px;object-fit:cover;object-position:center;aspect-ratio:4/3;box-shadow:0 16px 48px rgba(0,0,0,0.18);border:5px solid var(--cream);}
     .about-tag{position:absolute;top:24px;right:-12px;background:var(--gold);color:#fff;font-size:0.68rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;padding:8px 16px;border-radius:4px;box-shadow:0 4px 16px rgba(201,150,58,0.4);}
     .about-text p{font-size:1rem;color:var(--muted);line-height:1.8;margin-bottom:16px;}
     .about-facts{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:32px;}
@@ -429,9 +429,9 @@ const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.gal
       .hero-logo-ring{width:130px;height:130px;}
       .hero-title{font-size:3rem;}
       .hero-btns{flex-direction:column;align-items:center;}
-      .about-imgs{padding-bottom:40px;}
+      .about-imgs{padding-bottom:64px;}
       .about-img-main{width:100%;}
-      .about-img-float{width:45%;}
+      .about-img-float{width:58%;}
       .gallery-mosaic{grid-template-columns:repeat(2,1fr);grid-auto-rows:130px;}
       .offer-cards{grid-template-columns:1fr;}
       .offer-img{aspect-ratio:2/1;}
@@ -538,7 +538,7 @@ const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.gal
 <nav id="nav" aria-label="Hauptnavigation">
   <div class="container nav-inner">
     <a href="#" class="nav-logo">
-      <img src="/images/site-embed-01.webp" alt="Del Sud" width="36" height="36" />
+      <img src="/images/logo-rund.webp" alt="Del Sud" width="36" height="36" />
       <span class="nav-logo-text">DEL SUD</span>
     </a>
     <div class="nav-links">
@@ -581,7 +581,7 @@ const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.gal
   <div class="hero-content">
     <div class="hero-logo-wrap">
       <div class="hero-logo-ring">
-        <img src="/images/site-embed-02.webp" alt="Del Sud Logo" width="150" height="150" />
+        <img src="/images/logo-rund.webp" alt="Del Sud Logo" width="150" height="150" />
       </div>
     </div>
     <div class="hero-flag-bar"><span></span><span></span><span></span></div>
@@ -621,8 +621,8 @@ const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.gal
     <div class="about-grid">
       <div class="about-imgs reveal-l">
         <div class="about-tag">Ogni giorno fresco</div>
-        <img class="about-img-main" src="/images/about-main.webp" alt="Del Sud Restaurant Frankenberg — Fachwerk-Fassade mit italienischen Farben" width="379" height="517" loading="lazy" decoding="async" />
-        <img class="about-img-float" src="/images/about-float.webp" alt="Das Team von Del Sud Frankenberg" width="540" height="360" loading="lazy" decoding="async" />
+        <img class="about-img-main" src="/images/about-exterior-2026.webp" alt="Del Sud Restaurant in Frankenberg — Fachwerk-Fassade mit italienischen Farben" width="1800" height="1350" loading="lazy" decoding="async" />
+        <img class="about-img-float" src="/images/about-interior-2026.webp" alt="Blick in die offene Küche des Del Sud in Frankenberg" width="1800" height="1350" loading="lazy" decoding="async" />
       </div>
       <div class="about-text reveal-r">
         <p class="eyebrow">Über uns</p>
@@ -698,8 +698,7 @@ const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.gal
     <div class="feature-grid">
       <div class="feature-media reveal-l">
         <span class="feature-badge">Feste feiern</span>
-        <!-- PLATZHALTER: bitte durch echtes Foto der Räumlichkeiten ersetzen (Zieldatei: /images/raeumlichkeiten.webp) -->
-        <img src="/images/galerie-18.webp" alt="Räumlichkeiten im Del Sud für Feiern und Events" width="600" height="450" loading="lazy" decoding="async" />
+        <img src="/images/raeumlichkeiten.webp" alt="Eingedeckter Gastraum im Del Sud für Feiern und Events" width="600" height="450" loading="lazy" decoding="async" />
       </div>
       <div class="feature-text reveal-r">
         <p class="eyebrow">Feiern &amp; Events</p>
@@ -780,8 +779,7 @@ const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.gal
     <div class="feature-grid reverse">
       <div class="feature-media reveal-r">
         <span class="feature-badge">Aus eigener Herstellung</span>
-        <!-- PLATZHALTER: bitte durch echtes Foto des Olivenöls ersetzen (Zieldatei: /images/olivenoel.webp) -->
-        <img src="/images/site-embed-05.webp" alt="Natives Olivenöl aus eigener Herstellung im Del Sud" width="600" height="450" loading="lazy" decoding="async" />
+        <img src="/images/olivenoel.webp" alt="Natives Olivenöl aus eigener Herstellung im Del Sud" width="600" height="450" loading="lazy" decoding="async" />
       </div>
       <div class="feature-text reveal-l">
         <p class="eyebrow">Unser Olivenöl</p>
@@ -935,7 +933,7 @@ const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.gal
   <div class="container">
     <div class="foot-inner">
       <div class="foot-logo">
-        <img src="/images/site-embed-13.webp" alt="Del Sud" width="150" height="150" loading="lazy" decoding="async" />
+        <img src="/images/logo-rund.webp" alt="Del Sud" width="150" height="150" loading="lazy" decoding="async" />
         <span>DEL SUD</span>
       </div>
       <div class="foot-links">
