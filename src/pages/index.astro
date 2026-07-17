@@ -63,7 +63,7 @@ const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.gal
   <!-- SEO Meta-Tags -->
   <meta name="description" content="Del Sud – Authentische italienische Küche in Frankenberg (Eder). Handgemachte Pizza, frische Pasta, erlesene Weine. Do–Di geöffnet. Jetzt reservieren!" />
   <meta name="keywords" content="Pizzeria Frankenberg, italienisches Restaurant, Pizza Frankenberg Eder, Del Sud, Ristorante, Bar, Reservierung, italienisch essen Frankenberg" />
-  <meta name="author" content="Del Sud Bar Ristorante Pizzeria" />
+  <meta name="author" content="Bar Ristorante Pizzeria del Sud GmbH" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://delsud-frankenberg.de/" />
   <link rel="icon" type="image/png" href="/favicon.png" />
@@ -280,6 +280,29 @@ const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.gal
     .btn-speisekarte:hover{background:transparent;color:var(--gold-lt);}
     .btn-speisekarte svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;}
 
+    /* FEATURE (Feiern & Events / Olivenöl) */
+    .feature{padding:110px 0;}
+    .feature.cream{background:var(--cream);}
+    .feature.dark{background:var(--burg);}
+    .feature-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+    .feature-media{position:relative;}
+    .feature-media img{width:100%;border-radius:16px;object-fit:cover;aspect-ratio:4/3;box-shadow:0 24px 70px rgba(0,0,0,0.16);}
+    .feature-badge{position:absolute;top:18px;left:18px;background:var(--gold);color:#fff;font-size:0.68rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:8px 16px;border-radius:4px;box-shadow:0 4px 16px rgba(201,150,58,0.4);}
+    .feature.dark .sec-title{color:#fff;}
+    .feature.dark .eyebrow{color:var(--gold-lt);}
+    .feature.dark .gold-line{background:var(--gold-lt);}
+    .feature-text p{font-size:1rem;color:var(--muted);line-height:1.8;margin-bottom:16px;}
+    .feature.dark .feature-text p{color:rgba(255,255,255,0.72);}
+    .feature-note{display:inline-flex;align-items:center;gap:10px;margin:8px 0 26px;padding:10px 18px;background:var(--gold-dim);border:1px solid var(--gold-border);border-radius:50px;font-size:0.82rem;font-weight:700;letter-spacing:0.03em;color:var(--gold);}
+    .feature.dark .feature-note{color:var(--gold-lt);}
+    .feature-note svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;}
+    .btn-tel{display:inline-flex;align-items:center;gap:10px;padding:14px 32px;border-radius:50px;background:var(--gold);color:#fff;font-weight:700;font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;transition:var(--ease);border:none;cursor:pointer;}
+    .btn-tel:hover{background:var(--burg);transform:translateY(-2px);box-shadow:0 10px 28px rgba(201,150,58,0.35);}
+    .feature.dark .btn-tel:hover{background:#fff;color:var(--burg);}
+    .btn-tel svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;}
+    .feature-ph-hint{display:block;margin-top:12px;font-size:0.72rem;color:var(--muted);opacity:0.6;font-style:italic;}
+    @media(max-width:960px){.feature-grid{grid-template-columns:1fr;gap:40px;}.feature-grid.reverse .feature-media{order:-1;}}
+
     /* REVIEWS */
     .reviews{padding:90px 0;background:var(--cream-alt);}
     .reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px;}
@@ -481,7 +504,7 @@ const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.gal
       {
         "@type": "Question",
         "name": "Kann man bei Del Sud reservieren?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Ja, telefonisch unter 0170 3678734 oder per E-Mail. Auch spontane Besuche ohne Reservierung sind willkommen." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Ja, ganz einfach telefonisch unter 0170 3678734. Auch spontane Besuche ohne Reservierung sind willkommen." }
       },
       {
         "@type": "Question",
@@ -521,9 +544,10 @@ const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.gal
     <div class="nav-links">
       <a href="#about">Über uns</a>
       <a href="#offer">Angebot</a>
+      <a href="#events">Feiern</a>
       <a href="#hours">Öffnungszeiten</a>
       <a href="#gallery">Galerie</a>
-      <a href="#reviews">Bewertungen</a>
+      <a href="#olivenoel">Olivenöl</a>
       <a href="#contact">Kontakt</a>
       <a href="/speisekarte/" class="nav-cta">Speisekarte</a>
     </div>
@@ -533,8 +557,10 @@ const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.gal
 <div class="mobile-menu" id="mob" role="navigation" aria-label="Mobile Navigation">
   <a href="#about" class="ml">Über uns</a>
   <a href="#offer" class="ml">Angebot</a>
+  <a href="#events" class="ml">Feiern & Events</a>
   <a href="#hours" class="ml">Öffnungszeiten</a>
   <a href="#gallery" class="ml">Galerie</a>
+  <a href="#olivenoel" class="ml">Unser Olivenöl</a>
   <a href="#reviews" class="ml">Bewertungen</a>
   <a href="#contact" class="ml">Kontakt</a>
   <a href="/speisekarte/" class="ml">Speisekarte</a>
@@ -666,6 +692,30 @@ const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.gal
   </div>
 </section>
 
+<!-- FEIERN & EVENTS -->
+<section class="feature cream" id="events">
+  <div class="container">
+    <div class="feature-grid">
+      <div class="feature-media reveal-l">
+        <span class="feature-badge">Feste feiern</span>
+        <!-- PLATZHALTER: bitte durch echtes Foto der Räumlichkeiten ersetzen (Zieldatei: /images/raeumlichkeiten.webp) -->
+        <img src="/images/galerie-18.webp" alt="Räumlichkeiten im Del Sud für Feiern und Events" width="600" height="450" loading="lazy" decoding="async" />
+      </div>
+      <div class="feature-text reveal-r">
+        <p class="eyebrow">Feiern &amp; Events</p>
+        <h2 class="sec-title">Ihre Feier bei uns <em>im Del Sud</em></h2>
+        <div class="gold-line"></div>
+        <p>Ob Geburtstag, Familienfeier, Taufe, Firmenessen oder Vereinsabend — bei uns finden Ihre besonderen Anlässe den passenden Rahmen. Unsere Räumlichkeiten lassen sich für geschlossene Gesellschaften und Events anmieten, mit italienischer Küche, herzlicher Gastfreundschaft und südländischem Ambiente.</p>
+        <p>Wir stimmen Menü, Ablauf und Ausstattung individuell mit Ihnen ab, damit Ihr Fest genau so wird, wie Sie es sich wünschen. Sprechen Sie uns einfach an — wir beraten Sie gern.</p>
+        <a href={`tel:${cms.phone_link}`} class="btn-tel">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.9 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.81 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Feier anfragen
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ÖFFNUNGSZEITEN -->
 <section class="hours" id="hours">
   <div class="container">
@@ -724,6 +774,30 @@ const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.gal
   </div>
 </section>
 
+<!-- UNSER OLIVENÖL -->
+<section class="feature dark" id="olivenoel">
+  <div class="container">
+    <div class="feature-grid reverse">
+      <div class="feature-media reveal-r">
+        <span class="feature-badge">Aus eigener Herstellung</span>
+        <!-- PLATZHALTER: bitte durch echtes Foto des Olivenöls ersetzen (Zieldatei: /images/olivenoel.webp) -->
+        <img src="/images/site-embed-05.webp" alt="Natives Olivenöl aus eigener Herstellung im Del Sud" width="600" height="450" loading="lazy" decoding="async" />
+      </div>
+      <div class="feature-text reveal-l">
+        <p class="eyebrow">Unser Olivenöl</p>
+        <h2 class="sec-title">Natives Olivenöl aus <em>Süditalien</em></h2>
+        <div class="gold-line"></div>
+        <p>Ein Stück unserer Heimat zum Mitnehmen: Unser Olivenöl stammt aus dem eigenen Familienbetrieb in Süditalien. Von der Ernte bis zur Abfüllung liegt alles in den Händen unserer Familie — ehrlich, traditionell und in bester Qualität.</p>
+        <p>Der volle, aromatische Geschmack macht es zum Herzstück unserer Küche. Probieren Sie es bei uns im Restaurant.</p>
+        <span class="feature-note">
+          <svg viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          Direkt bei uns im Del Sud erhältlich
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox" role="dialog" aria-label="Bildvorschau">
   <button class="lightbox-close" aria-label="Schließen"><svg viewBox="0 0 24 24" fill="none"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
@@ -773,10 +847,10 @@ const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.gal
     </div>
     <div class="reviews-meta reveal">
       <div class="reviews-badge">
-        <span class="reviews-badge-score">4,5</span>
+        <span class="reviews-badge-score">4,7</span>
         <div>
           <div class="reviews-badge-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.86L12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg></div>
-          <span class="reviews-badge-text">basierend auf 155+ Bewertungen</span>
+          <span class="reviews-badge-text">basierend auf 188 Bewertungen</span>
         </div>
       </div>
     </div>
@@ -812,11 +886,12 @@ const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.gal
         </div>
       </div>
       <div class="reveal-r">
-        <p class="c-value" style="margin-bottom:22px;font-size:0.95rem;line-height:1.75;color:rgba(255,255,255,0.82);text-align:center;">Reservierungen, Fragen oder Anregungen —<br/>wir freuen uns auf Ihre Nachricht.</p>
-        <a class="btn btn-gold" href={`mailto:${cms.email}?subject=Anfrage%20an%20Del%20Sud`} style="width:100%;justify-content:center;gap:10px;text-decoration:none;box-sizing:border-box;display:flex;align-items:center;">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-          E-Mail an Del Sud schreiben
+        <p class="c-value" style="margin-bottom:22px;font-size:0.95rem;line-height:1.75;color:rgba(255,255,255,0.82);text-align:center;">Reservierungen, Fragen oder Anregungen —<br/>rufen Sie uns einfach an, wir freuen uns auf Sie.</p>
+        <a class="btn btn-gold" href={`tel:${cms.phone_link}`} style="width:100%;justify-content:center;gap:10px;text-decoration:none;box-sizing:border-box;display:flex;align-items:center;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.9 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.81 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Jetzt anrufen &amp; reservieren
         </a>
+        <p class="c-value" style="margin-top:14px;font-size:0.86rem;text-align:center;color:rgba(255,255,255,0.6);"><a href={`tel:${cms.phone_link}`} style="color:var(--gold-lt);">{cms.phone_display}</a></p>
       </div>
     </div>
   </div>
@@ -843,7 +918,7 @@ const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.gal
       </details>
       <details class="faq-item reveal">
         <summary class="faq-q">Kann man bei Del Sud reservieren?</summary>
-        <p class="faq-a">Ja, telefonisch unter <a href="tel:01703678734" style="color:var(--gold);">0170 3678734</a> oder per E-Mail. Auch spontane Besuche ohne Reservierung sind jederzeit willkommen.</p>
+        <p class="faq-a">Ja, ganz einfach telefonisch unter <a href="tel:01703678734" style="color:var(--gold);">0170 3678734</a>. Auch spontane Besuche ohne Reservierung sind jederzeit willkommen.</p>
       </details>
       <details class="faq-item reveal">
         <summary class="faq-q">Gibt es vegetarische Gerichte?</summary>
@@ -873,7 +948,7 @@ const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.gal
         <a href="/datenschutz/">Datenschutz</a>
       </div>
     </div>
-    <p class="foot-copy">© 2026 Bar Ristorante Pizzeria Del Sud · <a href={`https://maps.google.com/?q=${encodeURIComponent(cms.address_street + ' ' + cms.address_zip + ' ' + cms.address_city)}`} target="_blank" rel="noopener noreferrer">{cms.address_street} · {cms.address_zip} {cms.address_city}</a><br/>Website erstellt von <a href="https://360-ai.org" target="_blank" rel="noopener noreferrer">360ai</a></p>
+    <p class="foot-copy">© 2026 Bar Ristorante Pizzeria del Sud GmbH · <a href={`https://maps.google.com/?q=${encodeURIComponent(cms.address_street + ' ' + cms.address_zip + ' ' + cms.address_city)}`} target="_blank" rel="noopener noreferrer">{cms.address_street} · {cms.address_zip} {cms.address_city}</a><br/>Website erstellt von <a href="https://360-ai.org" target="_blank" rel="noopener noreferrer">360ai</a></p>
   </div>
 </footer>
 
