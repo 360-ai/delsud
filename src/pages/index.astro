@@ -512,6 +512,16 @@ const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.gal
         "@type": "Question",
         "name": "Gibt es bei Del Sud auch vegetarische Gerichte?",
         "acceptedAnswer": { "@type": "Answer", "text": "Ja, unsere Speisekarte bietet zahlreiche vegetarische Optionen — von Pizza Margherita über Pasta mit Gemüse bis zu frischen Salaten." }
+      },
+      {
+        "@type": "Question",
+        "name": "Gibt es bei Del Sud auch Familienpizzen?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Ja, auf Anfrage backen wir gerne Familienpizzen im XXL-Format zum Teilen. Sprechen Sie uns einfach an." }
+      },
+      {
+        "@type": "Question",
+        "name": "Kann man bei Del Sud Feiern und Events veranstalten?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Ja, ob Geburtstag, Konfirmation, Taufe, Familienfeier oder Firmenessen — auch für Vorträge, Lesungen und kleine Kulturabende bieten wir den passenden Rahmen. Unsere Räumlichkeiten lassen sich für geschlossene Gesellschaften anmieten, Menü und Ablauf stimmen wir individuell ab." }
       }
     ]
   })}></script>
@@ -706,8 +716,8 @@ const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.gal
         <p class="eyebrow">Feiern &amp; Events</p>
         <h2 class="sec-title">Ihre Feier bei uns <em>im Del Sud</em></h2>
         <div class="gold-line"></div>
-        <p>Ob Geburtstag, Familienfeier, Taufe, Firmenessen oder Vereinsabend — bei uns finden Ihre besonderen Anlässe den passenden Rahmen. Unsere Räumlichkeiten lassen sich für geschlossene Gesellschaften und Events anmieten, mit italienischer Küche, herzlicher Gastfreundschaft und südländischem Ambiente.</p>
-        <p>Wir stimmen Menü, Ablauf und Ausstattung individuell mit Ihnen ab, damit Ihr Fest genau so wird, wie Sie es sich wünschen. Sprechen Sie uns einfach an — wir beraten Sie gern.</p>
+        <p>Ob Geburtstag, Taufe, Kommunion oder Konfirmation, Familienfeier, Firmenessen oder Vereinsabend — bei uns finden Ihre besonderen Anlässe den passenden Rahmen. Unsere Räumlichkeiten lassen sich für geschlossene Gesellschaften und Events anmieten, mit italienischer Küche, herzlicher Gastfreundschaft und südländischem Ambiente.</p>
+        <p>Auch für Vorträge, Lesungen, Seminare oder kleine Kulturabende sind wir der richtige Ort — mit stimmungsvollem Ambiente und der passenden Bewirtung dazu. Wir stimmen Menü, Ablauf und Ausstattung individuell mit Ihnen ab, damit Ihre Veranstaltung genau so wird, wie Sie es sich wünschen. Sprechen Sie uns einfach an — wir beraten Sie gern.</p>
         <a href={`tel:${cms.phone_link}`} class="btn-tel">
           <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.9 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.81 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           Feier anfragen
@@ -923,6 +933,14 @@ const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.gal
       <details class="faq-item reveal">
         <summary class="faq-q">Gibt es vegetarische Gerichte?</summary>
         <p class="faq-a">Ja, unsere Speisekarte bietet zahlreiche vegetarische Optionen — von Pizza Margherita über Pasta mit Gemüse bis zu frischen Salaten.</p>
+      </details>
+      <details class="faq-item reveal">
+        <summary class="faq-q">Gibt es auch Familienpizzen?</summary>
+        <p class="faq-a">Ja, auf Anfrage backen wir gerne Familienpizzen im XXL-Format zum Teilen. Sprechen Sie uns einfach an — wir freuen uns darauf.</p>
+      </details>
+      <details class="faq-item reveal">
+        <summary class="faq-q">Kann man bei Del Sud Feiern und Events veranstalten?</summary>
+        <p class="faq-a">Ja, ob Geburtstag, Konfirmation, Taufe, Familienfeier oder Firmenessen — auch für Vorträge, Lesungen und kleine Kulturabende bieten wir den passenden Rahmen. Unsere Räumlichkeiten lassen sich für geschlossene Gesellschaften anmieten, Menü und Ablauf stimmen wir individuell mit Ihnen ab.</p>
       </details>
     </div>
   </div>
