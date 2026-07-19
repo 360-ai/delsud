@@ -380,6 +380,7 @@ const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.gal
     .contact .sec-title{color:#fff;}
     .contact .eyebrow{color:var(--gold-lt);}
     .contact-wrap{display:grid;grid-template-columns:1fr 1.4fr;gap:80px;margin-top:60px;}
+    .contact-cta{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;}
     .c-info-block{display:flex;gap:16px;margin-bottom:28px;align-items:flex-start;}
     .c-icon{width:44px;height:44px;border-radius:50%;background:rgba(201,150,58,0.12);border:1px solid var(--gold-border);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
     .c-icon svg{width:18px;height:18px;stroke:var(--gold-lt);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;}
@@ -431,12 +432,16 @@ const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.gal
       .hero-logo-ring{width:130px;height:130px;}
       .hero-title{font-size:3rem;}
       .hero-btns{flex-direction:column;align-items:center;}
+      .scroll-cue{display:none;}
       .about-img-main{width:100%;}
       .about-img-float{width:52%;right:12px;}
       .about-facts{grid-template-columns:repeat(2,1fr);margin-top:40px;}
       .gallery-mosaic{grid-template-columns:repeat(2,1fr);grid-auto-rows:130px;}
       .offer-cards{grid-template-columns:1fr;}
       .offer-img{aspect-ratio:2/1;}
+    }
+    @media(max-height:780px){
+      .scroll-cue{display:none;}
     }
     /* Skip-Link */
     .skip-link{position:absolute;top:-999px;left:-999px;z-index:10000;padding:10px 18px;background:var(--gold);color:var(--burg);font-weight:700;text-decoration:none;border-radius:4px;font-size:0.9rem;}
@@ -860,7 +865,7 @@ const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.gal
         <span class="reviews-badge-score">4,7</span>
         <div>
           <div class="reviews-badge-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.86L12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg></div>
-          <span class="reviews-badge-text">basierend auf 188 Bewertungen</span>
+          <span class="reviews-badge-text">basierend auf 190+ Bewertungen</span>
         </div>
       </div>
     </div>
@@ -895,9 +900,9 @@ const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.gal
           <a href={`https://maps.google.com/?q=${encodeURIComponent(cms.address_street + ' ' + cms.address_zip + ' ' + cms.address_city)}`} target="_blank" rel="noopener noreferrer">In Google Maps öffnen &rarr;</a>
         </div>
       </div>
-      <div class="reveal-r">
+      <div class="reveal-r contact-cta">
         <p class="c-value" style="margin-bottom:22px;font-size:0.95rem;line-height:1.75;color:rgba(255,255,255,0.82);text-align:center;">Reservierungen, Fragen oder Anregungen —<br/>rufen Sie uns einfach an, wir freuen uns auf Sie.</p>
-        <a class="btn btn-gold" href={`tel:${cms.phone_link}`} style="width:100%;justify-content:center;gap:10px;text-decoration:none;box-sizing:border-box;display:flex;align-items:center;">
+        <a class="btn btn-gold" href={`tel:${cms.phone_link}`} style="width:100%;max-width:340px;justify-content:center;gap:10px;text-decoration:none;box-sizing:border-box;display:flex;align-items:center;">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.9 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.81 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           Jetzt anrufen &amp; reservieren
         </a>
