@@ -389,7 +389,7 @@ const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.gal
     .contact{padding:110px 0;background:var(--burg);}
     .contact .sec-title{color:#fff;}
     .contact .eyebrow{color:var(--gold-lt);}
-    .contact-wrap{display:grid;grid-template-columns:1fr 1.4fr;gap:80px;margin-top:60px;}
+    .contact-wrap{display:grid;grid-template-columns:1fr 1.4fr;gap:80px;margin-top:60px;align-items:center;}
     .contact-cta{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;}
     .c-info-block{display:flex;gap:16px;margin-bottom:28px;align-items:flex-start;}
     .c-icon{width:44px;height:44px;border-radius:50%;background:rgba(201,150,58,0.12);border:1px solid var(--gold-border);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
@@ -903,12 +903,6 @@ const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.gal
           <div class="c-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
           <div><div class="c-label">Öffnungszeiten</div><div class="c-value">Mo – Di: 17:30–22:00<br/>Do – So: 11:30–14:30 &amp; 17:30–22:00<br/><span style="opacity:.5">Mittwoch: Ruhetag</span></div></div>
         </div>
-        <div class="map-ph">
-          <svg viewBox="0 0 24 24"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
-          <span>{cms.address_street} · {cms.address_zip} {cms.address_city}</span>
-          <span style="font-size:0.72rem;opacity:0.45">[ Google Maps nach DSGVO-Einwilligung einbinden ]</span>
-          <a href={`https://maps.google.com/?q=${encodeURIComponent(cms.address_street + ' ' + cms.address_zip + ' ' + cms.address_city)}`} target="_blank" rel="noopener noreferrer">In Google Maps öffnen &rarr;</a>
-        </div>
       </div>
       <div class="reveal-r contact-cta">
         <p class="c-value" style="margin-bottom:22px;font-size:0.95rem;line-height:1.75;color:rgba(255,255,255,0.82);text-align:center;">Reservierungen, Fragen oder Anregungen —<br/>rufen Sie uns einfach an, wir freuen uns auf Sie.</p>
@@ -917,6 +911,12 @@ const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.gal
           Jetzt anrufen &amp; reservieren
         </a>
         <p class="c-value" style="margin-top:14px;font-size:0.86rem;text-align:center;color:rgba(255,255,255,0.6);"><a href={`tel:${cms.phone_link}`} style="color:var(--gold-lt);">{cms.phone_display}</a></p>
+        <div class="map-ph" style="width:100%;max-width:340px;box-sizing:border-box;margin-top:28px;">
+          <svg viewBox="0 0 24 24"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+          <span>{cms.address_street} · {cms.address_zip} {cms.address_city}</span>
+          <span style="font-size:0.72rem;opacity:0.45">[ Google Maps nach DSGVO-Einwilligung einbinden ]</span>
+          <a href={`https://maps.google.com/?q=${encodeURIComponent(cms.address_street + ' ' + cms.address_zip + ' ' + cms.address_city)}`} target="_blank" rel="noopener noreferrer">In Google Maps öffnen &rarr;</a>
+        </div>
       </div>
     </div>
   </div>
