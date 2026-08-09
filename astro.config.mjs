@@ -9,6 +9,7 @@ export default defineConfig({
   integrations: [
     storyblok({
       accessToken: env.STORYBLOK_TOKEN,
+      bridge: false,
       components: {},
       apiOptions: {
         region: 'eu',
